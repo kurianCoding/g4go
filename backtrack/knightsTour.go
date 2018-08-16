@@ -42,7 +42,7 @@ func knightsUtility(path *[][]int, xMove []int, yMove []int, x, y, moveCount int
 	}
 	return false
 }
-func KnightsTour(x, y int) ([][]int, bool) {
+func KnightsTour(x, y int) bool {
 	path := [][]int{
 		{-1, -1, -1, -1, -1, -1, -1, -1},
 		{-1, -1, -1, -1, -1, -1, -1, -1},
@@ -58,9 +58,9 @@ func KnightsTour(x, y int) ([][]int, bool) {
 	path[x][y] = 0
 	if knightsUtility(&path, xMove, yMove, x, y, 0) {
 		PrintValid(path)
-		return path, true
+		return true
 	} else {
-		return nil, false
+		return false
 	}
-	return path, true
+	return true
 }
