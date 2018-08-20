@@ -18,17 +18,17 @@ package backtrack
 */
 func qSafe(sol [][]int, a int, b int) bool {
 	for i := 0; i < b; i++ {
-		if sol[i][a] {
+		if sol[i][a] == 1 {
 			return false
 		}
 	}
 	for i, j := a, b; i > 0 && j > 0; i, j = i-1, j-1 {
-		if sol[i][j] {
+		if sol[i][j] == 1 {
 			return false
 		}
 	}
 	for i, j := a, b; i < MAX_COL && j > 0; i, j = i+1, j-1 {
-		if sol[i][j] {
+		if sol[i][j] == 1 {
 			return false
 		}
 	}
@@ -63,4 +63,5 @@ func SolveNQueen(n int) bool {
 		if yes then return false
 		if no then place one queen and repeat until none are left.
 	*/
+	return false
 }

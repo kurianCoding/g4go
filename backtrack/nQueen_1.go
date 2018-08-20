@@ -1,5 +1,7 @@
 package backtrack
 
+const MAX_COL int = 8
+
 /*
    this is a variation of nQueen problem. Here we are
    given a paritally filled chess board. The challenge is
@@ -15,7 +17,7 @@ package backtrack
 */
 
 func fillRow(board *[][]int, row int) {
-	for i := 0; i < row; i++ {
+	for i := 0; i < MAX_COL; i++ {
 		(*board)[row][i] = 1
 	}
 	return
@@ -23,7 +25,7 @@ func fillRow(board *[][]int, row int) {
 
 func fillCol(board *[][]int, col int) {
 
-	for i := 0; i < row; i++ {
+	for i := 0; i < MAX_COL; i++ {
 		(*board)[i][col] = 1
 	}
 	return
@@ -44,7 +46,7 @@ func nFill(board *[][]int) {
 		for j := 0; i < MAX_COL; j++ {
 			if (*board)[i][j] == 1 {
 				fillRow(board, i)
-				fillColl(board, j)
+				fillCol(board, j)
 				fillDiag(board, i, j)
 			}
 		}
