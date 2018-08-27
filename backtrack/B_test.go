@@ -22,7 +22,7 @@ func TestRatInMaze(t *testing.T) {
 		t.Errorf(" expected %v got %v", true, false)
 	}
 }
-func TestHM(t *testing.T) {
+func TestHamiltonianCycle(t *testing.T) {
 	A := [][]bool{
 		{false, true, false, true, false},
 		{true, false, true, true, true},
@@ -33,5 +33,21 @@ func TestHM(t *testing.T) {
 	exist := hasHM(A, 5)
 	if exist {
 		t.Errorf("expected %v got %v", false, true)
+	}
+}
+func TestSudoku(t *testing.T) {
+	a := [][]int{{3, 0, 6, 5, 0, 8, 4, 0, 0},
+		{5, 2, 0, 0, 0, 0, 0, 0, 0},
+		{0, 8, 7, 0, 0, 0, 0, 3, 1},
+		{0, 0, 3, 0, 1, 0, 0, 8, 0},
+		{9, 0, 0, 8, 6, 3, 0, 0, 5},
+		{0, 5, 0, 0, 9, 0, 6, 0, 0},
+		{1, 3, 0, 0, 0, 0, 2, 5, 0},
+		{0, 0, 0, 0, 0, 0, 0, 7, 4},
+		{0, 0, 5, 2, 0, 6, 3, 0, 0}}
+
+	solution := SD(a)
+	if !solution {
+		t.Errorf("expected %v got %v", true, false)
 	}
 }
