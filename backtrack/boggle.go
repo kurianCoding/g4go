@@ -6,4 +6,5 @@ package backtrack
 */
 
 func Boggle(array []int) []int {
+	return []int{0, 0}
 }

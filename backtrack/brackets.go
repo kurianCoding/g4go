@@ -1,4 +1,4 @@
-package geeksforgeeks
+package backtrack
 
 /* this function parses a string and takes out
 all the non paired brackets
@@ -8,6 +8,9 @@ func isBracket(in rune) bool {
 }
 
 func isValidBrackets(in string) bool {
+	if len(in) == 0 {
+		return false
+	}
 	var count int
 	for _, val := range in {
 		if val == '(' {
@@ -26,9 +29,10 @@ func isValidBrackets(in string) bool {
 func EleminateBrackets(in string) []string {
 	// returns a set of possibiliies for
 	// a valid string
-	var visited map[string]bool
+	var visited = make(map[string]bool)
 	var queue []string
 	var res []string
+	var level bool
 	queue = append(queue, in) // append the initial string
 	for len(queue) > 0 {
 
@@ -38,7 +42,25 @@ func EleminateBrackets(in string) []string {
 
 		if isValidBrackets(temp) {
 			res = append(res, temp)
+			level = true
 		}
-	}
 
+		if level {
+			continue
+		}
+		for i := 0; i < len(temp); i++ {
+			if !isBracket(rune(temp[i])) {
+				continue
+			}
+
+			temp = temp[:i] + temp[i+1:]
+
+			if !visited[temp] {
+				queue = append(queue, temp)
+				visited[temp] = true
+			}
+		}
+
+	}
+	return res
 }

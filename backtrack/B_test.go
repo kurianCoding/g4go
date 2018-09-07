@@ -4,6 +4,13 @@ import (
 	"testing"
 )
 
+func TestBrackets(t *testing.T) {
+	cleanStrings := EleminateBrackets("()())()")
+	if len(cleanStrings) != 3 {
+		t.Errorf("expected %d got %d", 3, len(cleanStrings))
+	}
+}
+
 func TestKnightsTour(t *testing.T) {
 	//exist := KnightsTour(0, 0)
 	//if !exist {
