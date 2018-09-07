@@ -4,6 +4,11 @@ import (
 	"testing"
 )
 
+func TestPrimeSum(t *testing.T) {
+	_ = PrimeSum(2, 7, 28)
+
+}
+
 func TestBrackets(t *testing.T) {
 	cleanStrings := EleminateBrackets("()())()")
 	if len(cleanStrings) != 3 {
