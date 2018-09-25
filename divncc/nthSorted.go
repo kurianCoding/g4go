@@ -3,7 +3,6 @@ package divncc
 /*  given two sorted arrays, we need to combine the two and find the nth
     element of the combined array
 */
-
 func NthCmb(array1, array2 []int, index int) int {
 	/*
 	   initialize a variable to zero, take the lowest number among two arrays
