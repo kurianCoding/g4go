@@ -15,3 +15,12 @@ func (n *Node) AddLeft(m *Node) {
 func (n *Node) AddRight(m *Node) {
 	n.Right = m
 }
+
+func (n *Node) Add(m *Node) {
+	if n.Right == nil {
+		n.Right = m
+	}
+	if n.Left == nil {
+		n.Left = m
+	}
+}
