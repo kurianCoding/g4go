@@ -5,6 +5,7 @@ import "fmt"
 /* add a node to the nearest empty leaf*/
 func AddNode(n *Node, key *Node) error {
 	var queue = make([]*Node, 0)
+	queue = append(queue, n)
 	for len(queue) > 0 {
 		k := queue[len(queue)-1]
 		queue = queue[0 : len(queue)-1]

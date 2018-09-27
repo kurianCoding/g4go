@@ -3,6 +3,14 @@ package tree
 import "testing"
 
 func TestAddNode(t *testing.T) {
+	root := NewNode(10)
+	key := NewNode(15)
+	a := NewNode(20)
+	root.AddLeft(a)
+	err := AddNode(root, key)
+	if err != nil {
+		t.Errorf("%v", err)
+	}
 }
 
 func TestCatlan(t *testing.T) {
