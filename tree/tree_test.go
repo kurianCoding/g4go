@@ -2,6 +2,9 @@ package tree
 
 import "testing"
 
+func TestAddNode(t *testing.T) {
+}
+
 func TestCatlan(t *testing.T) {
 	n := Catlan(4)
 	if n != 14 {
