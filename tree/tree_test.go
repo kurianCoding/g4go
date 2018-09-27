@@ -2,6 +2,14 @@ package tree
 
 import "testing"
 
+func TestDeleteNode(t *testing.T) {
+	root := NewNode(10)
+	key := NewNode(15)
+	key2 := NewNode(20)
+	root.AddLeft(key)
+	root.AddRight(key2)
+	DeleteNode(root, key)
+}
 func TestAddNode(t *testing.T) {
 	root := NewNode(10)
 	key := NewNode(15)
