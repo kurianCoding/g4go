@@ -2,6 +2,17 @@ package tree
 
 import "testing"
 
+func TestSize(t *testing.T) {
+	root := NewNode(10)
+	key := NewNode(15)
+	key2 := NewNode(20)
+	root.AddLeft(key)
+	root.AddRight(key2)
+	if num := Size(root); num != 3 {
+		t.Errorf("expected %d got %d", 3, num)
+	}
+}
+
 func TestDeleteNode(t *testing.T) {
 	root := NewNode(10)
 	key := NewNode(15)
