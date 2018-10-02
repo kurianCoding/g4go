@@ -2,17 +2,39 @@ package tree
 
 import "testing"
 
-func TestBalanced(t *testing.T) {
+func TestInOrderTraversal(t *testing.T) {
 
 	root := NewNode(10)
 	key := NewNode(15)
 	key2 := NewNode(20)
+	key3 := NewNode(30)
 	root.AddLeft(key)
 	root.AddRight(key2)
+	key2.AddRight(key3)
+	/* 	     root
+		key       key2
+	    keye3
+	*/
+	InOrderTraversal(root)
+}
+
+func TestBalanced(t *testing.T) {
+	root := NewNode(10)
+	key := NewNode(15)
+	key2 := NewNode(20)
+	key3 := NewNode(30)
+	root.AddLeft(key)
+	root.AddRight(key2)
+	key2.AddRight(key3)
+	/* 	     root
+		key       key2
+	    keye3
+	*/
 	if num := Balanced(root); num != true {
 		t.Errorf("expected %v got %v", true, num)
 	}
 }
+
 func TestSize(t *testing.T) {
 	root := NewNode(10)
 	key := NewNode(15)
@@ -32,6 +54,7 @@ func TestDeleteNode(t *testing.T) {
 	root.AddRight(key2)
 	DeleteNode(root, key)
 }
+
 func TestAddNode(t *testing.T) {
 	root := NewNode(10)
 	key := NewNode(15)
@@ -53,8 +76,8 @@ func TestCatlan(t *testing.T) {
 		t.Errorf("expected %d got %d", 14, n)
 	}
 }
-func TestSumAndProduct(t *testing.T) {
 
+func TestSumAndProduct(t *testing.T) {
 	n1 := NewNode(10)
 	n2 := NewNode(4)
 	n3 := NewNode(9)
