@@ -2,6 +2,17 @@ package tree
 
 import "testing"
 
+func TestBalanced(t *testing.T) {
+
+	root := NewNode(10)
+	key := NewNode(15)
+	key2 := NewNode(20)
+	root.AddLeft(key)
+	root.AddRight(key2)
+	if num := Balanced(root); num != true {
+		t.Errorf("expected %v got %v", true, num)
+	}
+}
 func TestSize(t *testing.T) {
 	root := NewNode(10)
 	key := NewNode(15)
