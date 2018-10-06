@@ -1,11 +1,13 @@
 package bst
 
+import "geeksforgeeks/tree"
+
 /*
    find the largest or equal to element which is lesser than
    the requested key.
 */
 
-func rClosestNeighbourSearch(root, res *Node, diff, val int) *Node {
+func rClosestNeighbourSearch(root, res *tree.Node, diff, val int) *tree.Node {
 	if root == nil {
 		return res
 	}
@@ -19,6 +21,6 @@ func rClosestNeighbourSearch(root, res *Node, diff, val int) *Node {
 	return rClosestNeighbourSearch(root.Left, res, diff, val)
 }
 
-func ClosestNeighbourSearch(root *Node, val int) *Node {
+func ClosestNeighbourSearch(root *tree.Node, val int) *tree.Node {
 	return rClosestNeighbour(root, root, root.Val-val, nil)
 }

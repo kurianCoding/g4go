@@ -1,5 +1,10 @@
 package bst
 
+import (
+	"geeksforgeeks/tree"
+	"testing"
+)
+
 /*
    binary search tree is a way of classifying information,
    all the right nodes of of a subtree contains values greater
@@ -9,6 +14,16 @@ package bst
 
 func TestClosestNeighbourSearch(t *testing.T) {
 	c := ClosestNeigbourSearch(root, 5)
+	root := tree.NewNode(2)
+	a := tree.NewNode(2)
+	a1 := tree.NewNode(3)
+	a2 := tree.NewNode(1)
+	a3 := tree.NewNode(5)
+	a4 := tree.NewNode(4)
+	root.AddRight(a)
+	a.AddRight(a1)
+	a.AddLeft(a3)
+	a3.AddRight(a4)
 	if c.Val != 5 {
 		t.Errof("expected %d got %d", 5, c.Val)
 	}
