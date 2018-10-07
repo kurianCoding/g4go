@@ -11,6 +11,12 @@ import (
    than the node value, naturally the left nodes contain all the
    nodes containing lesser values
 */
+func TestKthSmall(t *testing.T) {
+	/*
+		the function accepts the root node of a tree
+		and returns an integer.
+	*/
+}
 func TestLowestCommonAncestor(t *testing.T) {
 	/*
 		lowest common ancestor takes in three nodes
