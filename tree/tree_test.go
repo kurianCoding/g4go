@@ -4,18 +4,18 @@ import "testing"
 
 func TestInOrderTraversal(t *testing.T) {
 
-	root := NewNode(10)
-	key := NewNode(15)
-	key2 := NewNode(20)
-	key3 := NewNode(30)
-	root.AddLeft(key)
-	root.AddRight(key2)
-	key2.AddRight(key3)
-	/* 	     root
-		key       key2
-	    keye3
-	*/
-	InOrderTraversal(root)
+	//root := NewNode(10)
+	//key := NewNode(15)
+	//key2 := NewNode(20)
+	//key3 := NewNode(30)
+	//root.AddLeft(key)
+	//root.AddRight(key2)
+	//key2.AddRight(key3)
+	//[> 	     root
+	//key       key2
+	//keye3
+	//*/
+	//InOrderTraversal(root)
 }
 
 func TestBalanced(t *testing.T) {

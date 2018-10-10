@@ -7,6 +7,9 @@ import "fmt"
    to do this
 */
 func InOrderTraversal(root *Node) {
+	if root == nil {
+		return
+	}
 	var curr *Node
 	curr = root
 	q := make([]*Node, 0)
@@ -16,12 +19,14 @@ func InOrderTraversal(root *Node) {
 			check if the queue holding nodes is none empty or
 			if the current node is not pointing to a nil struct
 		*/
-		for curr.Left != nil { /*
-				check if the currend node is pointing to
-				a nil vector
-			*/
-			curr = curr.Left
-			q = append(q, curr) // push the left most nodes on top of queue
+		if curr != nil {
+			for curr.Left != nil { /*
+					check if the currend node is pointing to
+					a nil vector
+				*/
+				curr = curr.Left
+				q = append(q, curr) // push the left most nodes on top of queue
+			}
 		}
 		curr = q[len(q)-1]
 		if len(q)-1 > 0 {
