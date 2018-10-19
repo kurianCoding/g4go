@@ -22,5 +22,5 @@ func rClosestNeighbourSearch(root, res *tree.Node, diff, val int) *tree.Node {
 }
 
 func ClosestNeighbourSearch(root *tree.Node, val int) *tree.Node {
-	return rClosestNeighbour(root, root, root.Val-val, nil)
+	return rClosestNeighbourSearch(root, root, root.Val-val, val)
 }

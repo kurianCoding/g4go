@@ -25,7 +25,7 @@ func LowestCommonAncestor(root, a, b *tree.Node) *tree.Node {
 		return LowestCommonAncestor(root.Right, a, b)
 	}
 	if root.Val < a.Val && root.Val < b.Val {
-		return LowesttCommonAncestor(root.Left, a, b)
+		return LowestCommonAncestor(root.Left, a, b)
 	}
 	return root
 }

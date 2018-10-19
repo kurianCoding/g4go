@@ -37,7 +37,7 @@ func rIsSameTree(a, b []int, indl, indh, max, min int) bool {
 	/*
 	   if the search has reached the leaves
 	*/
-	if i == len(b)^j == len(a) || a[i] != b[j] {
+	if (i == len(b)) == (j == len(a)) || a[i] != b[j] {
 		return false
 	}
 	/*

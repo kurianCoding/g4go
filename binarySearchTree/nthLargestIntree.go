@@ -18,14 +18,15 @@ func NthLargest(root *tree.Node, count, limit int) (bool, *tree.Node) {
 		return false, nil
 	}
 
-	if ok, ans := NthLargest(root.right, count, limit); ok == true {
+	if ok, ans := NthLargest(root.Right, count, limit); ok == true {
 		return true, ans
 	}
 	count = count + 1
 	if count == limit {
 		return true, root
 	}
-	if ok, ans := NthLargest(root.left, count, limit); ok == true {
+	if ok, ans := NthLargest(root.Left, count, limit); ok == true {
 		return true, ans
 	}
+	return false, nil
 }

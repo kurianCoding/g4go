@@ -11,11 +11,3 @@ package bst
    of the root are at the same level, each branch of this level is also at
    the same level.
 */
-func IsLevelTrans(array []int) bool {
-	/*
-		this function takes in an array and returns a boolean
-		if the array is a level order transversal then it returns
-		true, otherwise it returns false.
-	*/
-	return true
-}

@@ -7,12 +7,12 @@ package bst
 */
 func IsSingle(list []int, size int) bool {
 	for i := 0; i < len(list)-1; i++ {
-		firstDiff = list[i] - list[i+1]
+		firstDiff := list[i] - list[i+1]
 		/*
 			the succesive element is either greater
 			or lesser
 		*/
-		secondDiff = list[i] - list[size-1]
+		secondDiff := list[i] - list[size-1]
 		/*
 			list[size-1] is the last element
 		*/

@@ -1,12 +1,14 @@
 package bst
 
+import "geeksforgeeks/tree"
+
 /*
    this algorithm searches the binary search algorithm
    by searching the binary tree for a given key, it returns
    the pointer to the object that stores the given key
 */
-func SearchBinaryTree(root *Node, val int) *Node {
-	if root == nil || root.Val == key {
+func SearchBinaryTree(root *tree.Node, val int) *tree.Node {
+	if root == nil || root.Val == val {
 		return root
 	}
 	if root.Val < val { /*
